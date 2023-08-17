@@ -9,8 +9,8 @@
 </script>
 
 <style scoped lang="scss">
-    :deep(.home-content) {
-        color: red;
+    .home-content {
+        color: $bgColor;
         font-size: 28px;
     }
 </style>
