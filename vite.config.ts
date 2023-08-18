@@ -21,5 +21,16 @@ export default defineConfig({
         additionalData: '@import "@/assets/scss/variables.scss";@import "@/assets/scss/mixin.scss";'
       }
     }
+  },
+  server: {
+    host: '127.0.0.1',
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })
