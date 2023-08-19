@@ -5,6 +5,13 @@
 </template>
 
 <script setup lang="ts">
+    import { getOrderList } from '@/api/order'
+    import { onMounted } from 'vue'
+
+    onMounted(async () => {
+        let data = await getOrderList({})
+        console.log(data)
+    })
 
 </script>
 
